@@ -23,6 +23,7 @@ export interface OrderDetail {
     from: number;
     to: number;
   };
+
   date: string;
 }
 
