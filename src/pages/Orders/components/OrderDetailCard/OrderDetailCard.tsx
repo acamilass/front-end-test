@@ -7,6 +7,19 @@ export function OrderDetailContainer({ children }: PropsWithChildren<{}>) {
 }
 
 export function OrderDetailCard({ props }: any) {
+
+  function isSelectedIcon(status: string) {
+    return props.status === status
+    ? `${classes.selected_icon} ${classes.status__icon}`
+    : `${classes.status__icon}`
+  }
+
+  function isSelectedTitle(status: string) {
+    return props.status === status
+    ? `${classes.selected} ${classes.status__title}`
+    : `${classes.status__title}`
+  }
+
   return (
     <OrderDetailContainer>
       <div className={classes.detail}>
@@ -46,46 +59,46 @@ export function OrderDetailCard({ props }: any) {
           <div className={classes.detail__follow_progress}>
             {/* <p>{props.status}</p> */}
             <div className={classes.status}>
-              <div className={classes.status__icon}>
+              <div className={isSelectedIcon('Aguardando pagamento')}>
 
               </div>
-              <span className={classes.status__title}>
+              <span className={isSelectedTitle('Aguardando pagamento')}>
                 Aguardando pagamento
               </span>
             </div>
 
             <div className={classes.status}>
-              <div className={classes.status__icon}>
+              <div className={isSelectedIcon('Pagamento aprovado')}>
 
               </div>
-              <span className={classes.status__title}>
-                Pagamento confirmado
+              <span className={isSelectedTitle('Pagamento aprovado')}>
+                Pagamento aprovado
               </span>
             </div>
 
             <div className={classes.status}>
-              <div className={classes.status__icon}>
+              <div className={isSelectedIcon('Pedido em separação')}>
 
               </div>
-              <span className={classes.status__title}>
+              <span className={isSelectedTitle('Pedido em separação')}>
                 Pedido em separação
               </span>
             </div>
 
             <div className={classes.status}>
-              <div className={classes.status__icon}>
+              <div className={isSelectedIcon('Pedido em transporte')}>
 
               </div>
-              <span className={classes.status__title}>
+              <span className={isSelectedTitle('Pedido em transporte')}>
                 Pedido em transporte
               </span>
             </div>
 
             <div className={classes.status}>
-              <div className={classes.status__icon}>
+              <div className={isSelectedIcon('Pedido entregue')}>
 
               </div>
-              <span className={classes.status__title}>
+              <span className={isSelectedTitle('Pedido entregue')}>
                 Pedido entregue
               </span>
             </div>
