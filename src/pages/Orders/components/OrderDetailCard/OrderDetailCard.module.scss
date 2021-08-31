@@ -1,4 +1,6 @@
 .detail {
+  margin-top: 2rem;
+  color: #242325;
 
   &__header {
     display: flex;
@@ -7,9 +9,69 @@
   }
 
   &__order {
+    h2 {
+      text-transform: uppercase;
+    }
 
-    &_sumary {
+    &_summary {
+      h3, h4 {
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+    }
+
+    &_infos {
+      border-top: 1px solid #87919e;
+      border-bottom: 1px solid #87919e;
+
+      .infos {
+        display: flex;
+        justify-content: space-between;
+
+        p {
+          margin: 0 0 15px 0;
+        }
+      }
+    }
+  }
+
+  &__follow {
+
+    &_progress {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0;
+
+      .status {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #87919e;
+
+        &__icon {
+          background-color: #87919e;
+          height: 60px;
+          width: 60px;
+          border-radius: 50%;
+          margin-bottom: 10px;
+        }
+
+        &__title {
+          text-transform: uppercase;
+          text-align: center;
+        }
+
+      }
 
     }
   }
+
+  &__shipping {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
 }
+
+// 87919e
+// 242325
