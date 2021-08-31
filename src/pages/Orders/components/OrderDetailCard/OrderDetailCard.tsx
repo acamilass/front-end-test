@@ -1,10 +1,13 @@
-import React from 'react';
-import { Card } from "../../../../components/Card/Card";
+import React, { PropsWithChildren } from 'react';
 import classes from './OrderDetailCard.module.scss';
 
-export function OrderDetailCard() {
+export function OrderDetailContainer({ children }: PropsWithChildren<{}>) {
+  return <div className={classes.container}>{children}</div>
+}
+
+export function OrderDetailCard({ orderDetail }: any) {
   return (
-    <Card>
+    <OrderDetailContainer>
       <div className={classes.detail}>
 
         <div className={classes.detail__header}>
@@ -19,7 +22,18 @@ export function OrderDetailCard() {
             RESUMO DA COMPRA
           </div>
         </div>
+
+        <div className={classes.detail__follow}>
+          <h2>Acompanhe o seu pedido</h2>
+          <div className={classes.detail__follow_progress}>
+
+          </div>
+        </div>
+
+        <div className={classes.detail__shipping}>
+          <h3>Entregar em:</h3>
+        </div>
       </div>
-    </Card>
+    </OrderDetailContainer>
   )
 }
