@@ -53,67 +53,6 @@
     }
   }
 
-  &__follow {
-
-    &_progress {
-      display: flex;
-      justify-content: space-between;
-      margin: 20px 0;
-
-      @media (max-width: 500px) {
-        flex-direction: column;
-      }
-
-      .status {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        color: #87919e;
-
-        @media (max-width: 500px) {
-          flex-direction: unset;
-        }
-
-        &__icon {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-          background-color: #87919e;
-          height: 60px;
-          width: 60px;
-          border-radius: 50%;
-          margin-bottom: 10px;
-
-          img {
-            height: 50px;
-            width: 50px;
-            filter: invert(100%);
-          }
-        }
-
-        &__title {
-          text-transform: uppercase;
-          text-align: center;
-
-          @media (max-width: 500px) {
-            margin-left: 15px;
-          }
-        }
-
-        .selected {
-          color: #242325;
-        }
-
-        .selected_icon {
-          background-color: #242325;
-        }
-
-      }
-
-    }
-  }
-
   &__shipping {
     display: flex;
     justify-content: space-between;
