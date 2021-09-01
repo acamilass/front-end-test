@@ -6,6 +6,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      font-size: 20px;
+    }
   }
 
   &__order {
@@ -18,10 +24,22 @@
         font-weight: 500;
         text-transform: uppercase;
       }
+
+      .items {
+        display: flex;
+        justify-content: space-between;
+
+        font-size: 18px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #87919e;
+
+        span {
+          margin-bottom: 10px;
+        }
+      }
     }
 
     &_infos {
-      border-top: 1px solid #87919e;
       border-bottom: 1px solid #87919e;
 
       .infos {

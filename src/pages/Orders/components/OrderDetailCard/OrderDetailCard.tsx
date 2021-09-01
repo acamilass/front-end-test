@@ -25,6 +25,20 @@ export function OrderDetailCard({ props }: any) {
       : `${classes.status__title}`
   }
 
+  function renderList() {
+    return props.items?.map((item: any) => {
+      return (
+        <div className={classes.items}>
+          <div className="">
+            <span>{item.qty}x </span>
+            <span>{item.name}</span>
+          </div>
+          <span>{toCurrency(item.price)}</span>
+        </div>
+      )
+    })
+  }
+
   return (
     <OrderDetailContainer>
       <div className={classes.detail}>
@@ -38,7 +52,7 @@ export function OrderDetailCard({ props }: any) {
 
           <div className={classes.detail__order_summary}>
             <h3>Resumo da compra</h3>
-            {/* <p>{props.items[0].qty}x {props.items[0].name} {props.items[0].price}</p> */}
+            {renderList()}
           </div>
 
           <div className={classes.detail__order_infos}>
@@ -62,7 +76,6 @@ export function OrderDetailCard({ props }: any) {
         <div className={classes.detail__follow}>
           <h2>Acompanhe o seu pedido</h2>
           <div className={classes.detail__follow_progress}>
-            {/* <p>{props.status}</p> */}
             <div className={classes.status}>
               <div className={isSelectedIcon('Aguardando pagamento')}>
                 <img src={icon_1} />

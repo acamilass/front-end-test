@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { useQuery } from 'react-query';
+import { useParams } from 'react-router-dom';
 import { Container } from "../../components/Container/Container";
-import { getOrderDetail } from '../../core/detail';
+import { API_URL } from '../../env';
 import { OrderDetailCard } from './components/OrderDetailCard/OrderDetailCard';
 
 export function OrderDetail() {
+  const { id }: any = useParams();
   const [order, setOrder] = useState({});
-  const { data } = useQuery('details', getOrderDetail);
 
   useEffect(() => {
-    if (data) {
-      setOrder(data);
-    }
-  }, [data])
+    fetch(`${API_URL}/${id}.json`)
+      .then(res => res.json())
+      .then(order => setOrder(order))
+  }, [])
 
   return (
     <Container>
